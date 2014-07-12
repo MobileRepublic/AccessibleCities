@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <android.view.SurfaceView
+        android:id="@+id/surface"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/btn_start"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Start"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btn_stop"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Stop"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/capture"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Capture"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <TextureView
+        android:id="@+id/myTextureView"
+        android:layout_width="700dp"
+        android:layout_height="300dp"
+        android:layout_centerInParent="true" />
+
+    <TextView
+        android:id="@+id/scanAgain"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:text="Tap on anywhere in the screen to scan again"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#fff"
+        android:visibility="gone" />
+
+</RelativeLayout>

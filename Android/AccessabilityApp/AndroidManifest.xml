@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.acd.accessapp"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="19" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <permission
+        android:name="com.ram.ammapsv2.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="android.permission.CAMERA_EXTENDED" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.hardware.camera.autofocus" />
+    <uses-permission android:name="com.ram.ammapsv2.permission.MAPS_RECEIVE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <!-- Required to show current location -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" >
+    </uses-feature>
+    <uses-feature
+        android:name="android.hardware.camera.flash"
+        android:required="false" >
+    </uses-feature>
+    <uses-feature
+        android:name="android.hardware.camera.front"
+        android:required="false" >
+    </uses-feature>
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" >
+    </uses-permission>
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true" >
+    </supports-screens>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/app_icon"
+        android:label="@string/app_name"
+        android:screenOrientation="landscape"
+        android:theme="@style/AppTheme" >
+        <uses-library android:name="com.google.android.maps" />
+
+        <activity
+            android:name="com.acd.accessapp.SplashScreen"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+         <activity
+            android:name="com.acd.accessapp.PreviewDemo"
+            android:screenOrientation="landscape"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.acd.accessapp.MainActivity"
+            android:screenOrientation="landscape"
+            android:label="@string/app_name" >
+        </activity>
+        
+        <activity
+            android:name=".MainActivityVedio"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name" >
+        </activity>
+        
+        <activity
+            android:name="com.acd.accessapp.Settings"
+            android:screenOrientation="landscape"
+            android:label="@string/app_name" >
+        </activity>
+           <activity
+            android:name="com.acd.accessapp.VideoActivity"
+            android:screenOrientation="landscape"
+            android:label="@string/app_name" >
+        </activity>
+        
+        <activity
+            android:name="com.acd.accessapp.TripPlanner"
+            android:screenOrientation="landscape"
+            android:launchMode="singleInstance"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.acd.accessapp.Launcher"
+            android:screenOrientation="landscape"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".MixView"
+            android:label="@string/app_name"
+            android:launchMode="singleTop"
+            android:screenOrientation="landscape" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:mimeType="application/mixare-json"
+                    android:scheme="http" />
+                <data
+                    android:mimeType="application/mixare-json"
+                    android:scheme="content" />
+                <data
+                    android:mimeType="application/mixare-json"
+                    android:scheme="file" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value=".MixView" />
+        </activity>
+        <activity android:name="PluginLoaderActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="MixListView"
+            android:launchMode="singleTop"
+            android:screenOrientation="user" >
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
+        <activity
+            android:name="MixMap"
+            android:launchMode="singleTop"
+            android:screenOrientation="user" >
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
+        <activity android:name=".data.DataSource" />
+        <activity android:name=".data.DataSourceList" />
+        <activity android:name=".MapFragmentActivity" >
+        </activity>
+        <activity
+            android:name="com.acd.accessapp.ARProgrammaticallyActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.acd.accessapp.ARFromCraftARActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.acd.accessapp.RecognitionOnlyActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.acd.accessapp.LaunchersActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.acd.accessapp.HowToActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.acd.accessapp.WebActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.acd.accessapp.ScanImageActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <service android:name="com.acd.accessapp.utils.TTSService" >
+        </service>
+
+        <uses-library
+            android:name="com.google.android.maps"
+            android:required="true" />
+
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyCu7SbsdpeVNr1xkDwMX_M_wO9mnQhZ8Qo" />
+        <!-- android:value="AIzaSyB1cgiN2Yemv7KD15L1lvIJlnq4d-NjZmQ" /> -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+    </application>
+
+</manifest>

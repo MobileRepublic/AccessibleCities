@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <RelativeLayout
+            android:id="@+id/rlHeader"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/navbarbgpotraite"
+            android:visibility="visible" >
+
+            <ImageView
+                android:id="@+id/ivBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:padding="10dp"
+                android:src="@drawable/leftarrow" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/ivBack"
+                android:src="@drawable/navbarlogo"
+                android:visibility="gone" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/ivBack"
+                android:text="Accessible Cities"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#f7b177" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:text="Trip Planner"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/llOptions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/llMap"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:orientation="vertical"
+            android:padding="5dp" >
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TableRow
+                    android:id="@+id/tableRow3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+                    <CheckBox
+                        android:id="@+id/cbTrains"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="Tram"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="#000" />
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:enabled="false"
+                        android:text="Train"
+                        android:layout_marginLeft="10dp"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="#000" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:enabled="false"
+                        android:text="Bus"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="#000" />
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:enabled="false"
+                        android:text="Walk"
+                        android:layout_marginLeft="10dp"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="#000" />
+                </TableRow>
+            </TableLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/rlHeader"
+            android:layout_margin="1dp"
+            android:background="@drawable/searchbg"
+            android:orientation="horizontal"
+            android:padding="5dp" >
+
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TableRow
+                    android:id="@+id/tableRow1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="From" />
+
+                    <EditText
+                        android:id="@+id/etFrom"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:ems="10"
+                        android:singleLine="true" >
+                    </EditText>
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="To" />
+
+                    <EditText
+                        android:id="@+id/etTo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:ems="10"
+                        android:singleLine="true" >
+                    </EditText>
+                </TableRow>
+            </TableLayout>
+
+            <ImageView
+                android:id="@+id/ivSearch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="2"
+                android:padding="5dp"
+                android:src="@drawable/searchicon" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="10dp"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/button1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/settings"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/btnExplore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/explore" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</FrameLayout>

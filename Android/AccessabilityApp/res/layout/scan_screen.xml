@@ -1,0 +1,206 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true" >
+
+        <LinearLayout
+            android:id="@+id/llMain"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <LinearLayout
+                android:id="@+id/llMap"
+                android:layout_width="@dimen/explore_map_width"
+                android:layout_height="@dimen/explore_map_height"
+                android:layout_alignParentRight="true"
+                android:padding="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/cameraviewborder"
+                android:layout_below="@+id/relativeLayout1" >
+
+                <fragment
+                    android:id="@+id/map"
+                    android:name="com.google.android.gms.maps.SupportMapFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                     />
+            </LinearLayout>
+            
+            <LinearLayout
+                android:id="@+id/llOptions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:orientation="vertical"
+                android:padding="5dp"
+                android:visibility="gone"
+                android:layout_below="@+id/llMap"
+                android:layout_marginLeft="10dp" >
+
+                <CheckBox
+                    android:id="@+id/cbTrains"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Trams"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="#fff" />
+
+                <CheckBox
+                    android:id="@+id/cbBusses"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Busses"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="#fff" />
+                
+            </LinearLayout>
+            
+
+            <LinearLayout
+                android:id="@+id/llPoi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:visibility="gone" >
+
+                <CheckBox
+                    android:id="@+id/cbBuilding"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Building Accessibility"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="#fff" />
+
+                <CheckBox
+                    android:id="@+id/cbToilets"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Public Toilets"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="#fff" />
+
+                <CheckBox
+                    android:id="@+id/cbScools"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Super Stops"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="#fff" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout1"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/navbarbgpotraite"
+                android:visibility="gone" >
+
+                <ImageView
+                    android:id="@+id/ivBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:padding="5dp"
+                    android:src="@drawable/leftarrow" />
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/ivBack"
+                    android:src="@drawable/navbarlogo"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/ivMenu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:padding="10dp"
+                    android:src="@drawable/dropdownicons" />
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="Explore"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/ivSettings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:padding="5dp"
+                android:src="@drawable/settings" />
+
+            <ImageView
+                android:id="@+id/ivPoi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_toLeftOf="@+id/ivTripPlanner"
+                android:layout_toRightOf="@+id/ivSettings"
+                android:padding="5dp"
+                android:src="@drawable/poi" />
+
+            <ImageView
+                android:id="@+id/ivTripPlanner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:padding="5dp"
+                android:src="@drawable/tripplanner" />
+
+            <ImageView
+                android:id="@+id/bt_Play_Video"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/ivTripPlanner"
+                android:visibility="visible"
+                android:paddingBottom="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/taptoscan" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:textColor="#fff"
+                android:visibility="gone"
+                android:layout_marginTop="10dp"
+                android:text="Tap on anywhere in the screen to Play Video"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        </RelativeLayout>
+    </FrameLayout>
+
+</RelativeLayout>

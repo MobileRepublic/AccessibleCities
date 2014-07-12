@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/settings_hover" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_alignParentLeft="true"
+            android:visibility="gone"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/navbarbgpotraite" >
+
+            <ImageView
+                android:id="@+id/ivBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:padding="5dp"
+                android:src="@drawable/leftarrow" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/ivBack"
+                android:src="@drawable/navbarlogo"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/ivMenu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:padding="10dp"
+                android:src="@drawable/dropdownicons" />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="Settings"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/linearLayout1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#24a697"
+                    android:text="Please Choose your Point of Intrest" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@drawable/inputarea"
+                    android:text="Please Select your accedsiblity needs"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <CheckBox
+                    android:id="@+id/cbBuilding"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Building Accessibility" />
+
+                <CheckBox
+                    android:id="@+id/cbToilets"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Public Toilets" />
+
+                <CheckBox
+                    android:id="@+id/cbScools"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Super Stops" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="10dp"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/btnExplore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/explore" />
+
+            <ImageView
+                android:id="@+id/btnTripPlanner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/tripplanner" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</FrameLayout>
